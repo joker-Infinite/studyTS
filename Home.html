@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Home</title>
+</head>
+<body>
+
+</body>
+<script>
+    let a = 3;
+    let b = 5;
+    a = a + b - (b = a);
+    // console.log(a);
+    // console.log(b);
+
+    for (var i = 0; i < 10; i++) {
+        setTimeout(function() { console.log(i); }, 100 * i);
+    }
+
+    for (let i = 0; i < 10; i++) {
+        setTimeout(function() { console.log(i); }, 100 * i);
+    }
+
+    for (var i = 0; i < 10; i++) {
+        // capture the current state of 'i'
+        // by invoking a function with its current value
+        (function(i) {
+            setTimeout(function() { console.log(i); }, 100 * i);
+        })(i);
+    }
+</script>
+</html>
