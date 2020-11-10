@@ -29,7 +29,6 @@ interface optional {
     color?: String,
     height?: String
 }
-
 /*
 * 预定义参数 需要return
 * */
@@ -54,6 +53,43 @@ console.log(square({color: 'color', height: 'height'}));
 /*
 * 只读属性
 * */
+interface point {
+    readonly x: String,
+    readonly y: number
+}
+
+/*
+* 第一次赋值没有问题
+* */
+let p1: point = {x: '1', y: 2};
+
+/*
+* p1.x = 'o';
+* Cannot assign to 'x' because it is a read-only property
+* 无法分配给“ x”，因为它是只读属性
+* */
+
+/*
+* 数组 设置只读属性
+* */
+
+let arr: number[] = [1, 2, 3, 4];
+let ro: ReadonlyArray<number> = arr;
+/*
+* ro[0] = 90;
+*  Index signature in type 'readonly number[]' only permits reading
+* “ readonly number []”类型的索引签名仅允许读取
+* arr = ro; error
+* */
+arr = ro as number[];
+console.log(arr);
+
+/*
+* readonly vs const
+* 最简单判断该用readonly还是const的方法是看要把它做为变量使用还是做为一个属性。 做为变量使用的话用 const，若做为属性则使用readonly
+* */
+
+
 
 /*
 * 函数类型
