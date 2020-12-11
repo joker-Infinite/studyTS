@@ -1,13 +1,9 @@
 class Animal {
-    A: string;
+    common: string;
 
-    B(msg: string) {
-        this.A = msg;
+    change(msg: string) {
+        this.common = msg;
     };
-
-    C() {
-        console.log(this.A);
-    }
 }
 
 interface parameter {
@@ -17,7 +13,7 @@ interface parameter {
 
 class more extends Animal {
     break() {
-        console.log('break');
+        console.log(this.common);
     };
 
     calculation(msg: parameter) {
@@ -25,9 +21,50 @@ class more extends Animal {
     }
 }
 
-let more_ = new more();
+class dog implements more {
+    common: string;
 
-console.log(more_.B('sss'));
-console.log(more_.C());
-console.log(more_.break());
-console.log(more_.calculation({A: 1, B: 2}));
+    change(msg: string) {
+        this.common = msg;
+    };
+
+    break() {
+        console.log(this.common);
+    };
+
+    calculation(msg: parameter) {
+        return msg.A * msg.B;
+    }
+}
+
+let newMore = new more();
+newMore.common = 'aaa';
+newMore.change('sss');
+newMore.break();
+let newDog = new dog();
+newDog.common = ']]]]]'
+newDog.break();
+// console.log(newMore.calculation({A: 20, B: 30}));
+// console.log(newDog.calculation({A: 20, B: 30}));
+
+
+class Grid {
+    static origin = {x: 0, y: 0};
+
+    calculation(pointt: { x: number, y: number }) {
+        let x = pointt.x - Grid.origin.x;
+        let y = pointt.y - Grid.origin.y;
+        return (x * x + y * y) / this.scale;
+    }
+
+    constructor(public scale: number) {
+        this.scale += scale;
+    }
+}
+
+let Grid1 = new Grid(10);
+let Grid2 = new Grid(2);
+let res1 = Grid1.calculation({x: 10, y: 10});
+let res2 = Grid2.calculation({x: 10, y: 10});
+console.log(res1)
+console.log(res2)

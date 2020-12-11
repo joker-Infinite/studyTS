@@ -45,7 +45,7 @@ let AnimalCopy = new Animal_copy();
 AnimalCopy.name = '小狗仔';
 AnimalCopy.eat({food: '狗粮', num: 3});
 
-class People extends Animal{
+class People extends Animal {
     walk() {
         console.log('人会走')
     };
@@ -64,7 +64,7 @@ people.walk();
 people.run();
 people.jump();
 
-class All implements Animal,People{
+class All implements Animal, People {
     name: string;
 
     eat(data: InterfaceEat): void {
@@ -84,5 +84,6 @@ class All implements Animal,People{
 
     work(data: InterfaceWork): void {
     }
-
 }
+
+let all = new All();

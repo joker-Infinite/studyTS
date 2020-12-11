@@ -5,6 +5,13 @@ function test(config: { parameter: String }) {
 test({parameter: 'start'});
 
 
+function test_(config: String) {
+    console.log(config);
+}
+
+test_('start_');
+
+
 /*
 * 规范参数类型
 * */
@@ -29,6 +36,7 @@ interface optional {
     color?: String,
     height?: String
 }
+
 /*
 * 预定义参数 需要return
 * */
@@ -90,7 +98,6 @@ console.log(arr);
 * */
 
 
-
 /*
 * 函数类型
 * */
@@ -143,6 +150,6 @@ class Clock implements clockInterface {
 }
 
 let ll = new Clock('********');
-ll.currentTime='222';
+ll.currentTime = '222';
 ll.setTime('lll');
 console.log(ll.setTime('[[['))
