@@ -6,10 +6,10 @@
  * */
 
 class Father {
-    private value: string;
+    private value: string = '……';
 
     get(v: string) {
-        console.log(v + '获取信息')
+        console.log(v + '获取信息'+this.value)
     }
 }
 
