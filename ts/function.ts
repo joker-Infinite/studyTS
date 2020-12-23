@@ -15,3 +15,28 @@ nFun('1', '2');
 let ff = function (x: string, y: string): string {
     return x + y;
 };
+console.log(ff('C', 'G'));
+
+//可选参数和默认参数
+function optional(firstName: string, lastName?: string) {
+    let name = firstName + '-' + lastName;
+    console.log(name)
+}
+
+optional('liMing');//liMing-undefined
+
+function defaultArg(firstName: string, lastName = "Smith") {
+    let name = firstName + '-' + lastName;
+    console.log(name)
+}
+
+defaultArg('liMing');//liMing-Smith
+defaultArg('liMing', 'xiaoHong');//liMing-xiaoHong
+
+//剩余参数
+function remainingArg(firstName: string, ...restOfName: string[]) {
+    console.log(firstName)
+    console.log(restOfName)
+}
+
+remainingArg('a', 'b', 'c', 'd', 'e', 'f', 'g');
