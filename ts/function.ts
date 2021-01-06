@@ -40,3 +40,5 @@ function remainingArg(firstName: string, ...restOfName: string[]) {
 }
 
 remainingArg('a', 'b', 'c', 'd', 'e', 'f', 'g');
+
+let deck = {}
