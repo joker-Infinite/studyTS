@@ -5,13 +5,15 @@ interface Study {
 class study {
     num: number = 0;
 
-    public test(v: Study) {
-        console.log(v.v)
+    public test(value: Study) {
+        console.log(value.v)
     }
 }
 
 let study_ = new study();
 let stu = new study();
+
+study_.test({v: 9999})
 
 study_.num = 222;
 stu.num = 333;
